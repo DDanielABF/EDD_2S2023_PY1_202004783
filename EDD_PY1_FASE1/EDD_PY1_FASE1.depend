@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1692758699 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodolistacirculardoble.cpp
+	"NodoListaCircularDoble.h"
+
+1692758660 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodolistacirculardoble.h
+	<string>
+
+1692759009 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listacirculardoble.cpp
+	"ListaCircularDoble.h"
+
+1692758949 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listacirculardoble.h
+	"NodoListaCircularDoble.h"
+	<string>
+	<iostream>
+
+1692761429 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\main.cpp
+	<iostream>
+	<sstream>
+	<fstream>
+	<string>
+	<ListaCircularDoble.h>
+
