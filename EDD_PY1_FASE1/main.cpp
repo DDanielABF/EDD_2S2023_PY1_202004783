@@ -2,10 +2,14 @@
 #include <sstream>
 #include <fstream>
 #include <string>
-#include <ListaCircularDoble.h>
+#include "ListaCircularDoble.h"
+#include "ColaPrioridad.h"
+#include "Matriz.h"
 
 using namespace std;
-
+ListaCircularDoble *listaDobleCircular = new ListaCircularDoble();
+ColaPrioridad *cola = new ColaPrioridad();
+ Matriz *matriz = new Matriz();
 void CargaEmpleado(ListaCircularDoble *listaCircularDoble){
 string nombre="";
 string password="";
@@ -31,7 +35,7 @@ switch (opcion) {
         cin>> narchivo;
         ifstream archivo(narchivo);
         string Linea;
-        char delimitador=';';
+        char delimitador=',';
         getline(archivo,Linea);
         while (getline(archivo,Linea)){
 
@@ -50,10 +54,50 @@ switch (opcion) {
 
 }
 }
+void CargarProyecto(ColaPrioridad *Cola){
+ int opcion;
+ string prioridad, nombrep;
+cout << "Ingrese Nombre del proyecto" << endl;
+cin>> nombrep;
+cout << "Ingrese tipo de prioridad" << endl;
+cin >> prioridad;
+Cola->Encolar(nombrep,prioridad);
+cout<<"sin ordenar"<<endl;
+Cola->VerProyectos();
+Cola->Ordenar();
+cout<<"ordenamiento: "<<endl;
+Cola->VerProyectos();
+
+
+}
+void VerListas(ListaCircularDoble *listaCircularDoble,ColaPrioridad *Cola, Matriz *matriz){
+
+//listaCircularDoble->VerLista();
+Cola->VerProyectos();
+ while(Cola->Primero)
+    {
+        matriz->insertar_proyecto(Cola);
+        Cola->Descolar();
+        cout<<"si entra al while"<<endl;
+        //cout<<Cola.Primero.Siguiente<<endl;
+    }
+
+    matriz->insertar_empleado(listaCircularDoble);
+    //matriz->asignarProyecto("Cristian Suy","PY-106");
+    matriz->asignarProyecto("juan","PY-100");
+    matriz->asignarProyecto("marielos","PY-101");
+    matriz->asignarProyecto("alicia","PY-102");
+
+
+    matriz->Graficar();
+
+
+}
 
 int main()
 {
- ListaCircularDoble *listaDobleCircular = new ListaCircularDoble();
+
+
  string usuario="";
  string password="";
  string diseno=(50,"*");
@@ -95,9 +139,13 @@ int main()
                 break;
             case 2:
                 // Lógica para crear proyecto
+                CargarProyecto(cola);
                 cout << "Creando proyecto..." << endl;
                 break;
             case 3:
+                VerListas(listaDobleCircular,cola,matriz);
+                //listaCircularDoble->VerLista();
+                //cola->VerProyectos();
                 // Lógica para crear tareas
                 cout << "Creando tareas..." << endl;
                 break;
@@ -109,7 +157,7 @@ int main()
                 cout << "Saliendo..." << endl;
                 return 0;
             default:
-                cout << "Opción no válida. Intente nuevamente." << endl;
+                cout << "Opcion no valida. Intente nuevamente." << endl;
                 break;
         }
     }

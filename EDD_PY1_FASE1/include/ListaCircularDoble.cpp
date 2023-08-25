@@ -14,6 +14,9 @@ ListaCircularDoble::~ListaCircularDoble()
 void ListaCircularDoble::Insertar(std::string password, std::string nombre)
 {
     NodoListaCircularDoble *nuevo = new NodoListaCircularDoble(password,nombre);
+    int numero_empleado = 1 + this->Tamanio;
+    std::string codigo = (numero_empleado < 100 ? (numero_empleado < 10 ? "SC-00"+std::to_string(numero_empleado) : "SC-0"+std::to_string(numero_empleado)): "SC-"+std::to_string(numero_empleado));
+    nuevo->EmpleadoSistema->Codigo = codigo;
     if(this->Primero == 0)
     {
 
@@ -46,8 +49,9 @@ void ListaCircularDoble::Insertar(std::string password, std::string nombre)
     int contador = 0;
     while(this->Tamanio > contador)
     {
-        cout << aux->Nombre << endl;
-        cout << aux->Password << endl;
+        cout << aux->EmpleadoSistema->Codigo << endl;
+        cout << aux->EmpleadoSistema->Nombre << endl;
+        cout << aux->EmpleadoSistema->Password << endl;
         aux = aux->Siguiente;
         contador++;
     }
