@@ -1,5 +1,5 @@
 #include "ColaPrioridad.h"
-
+#include <fstream>
 ColaPrioridad::ColaPrioridad()
 {
     this->Primero = 0;
@@ -29,18 +29,7 @@ void ColaPrioridad::Encolar(std::string Nombre, std::string Tipo_de_Prioridad)
         aux->Siguiente = nuevoNodo;
         this->Tamanio++;
     }
-    /**
-    1. Crear una funcion que tenga una cola temporal, una copia de la cola actual
-    2. Cola temporal, le aplican un ordenamiento.
-    3. this->Primero = colaTemp.Primero
 
-    funcion Orderna
-        *colatemp = this->primero
-        ordenamientoBurbuja(colatemp)
-
-    PY-100 | B - PY-101 | B - PY-102 | A
-    PY-102 - PY-100 - PY-101
-    */
 }
 
 void ColaPrioridad::VerProyectos()
@@ -49,8 +38,8 @@ void ColaPrioridad::VerProyectos()
     int contador = 0;
     while(aux)
     {
-        cout << aux->Proyecto_ABC->Codigo << endl;
-        cout<<aux->Prioridad<<endl;
+        cout <<to_string(contador+1)<<". "<< aux->Proyecto_ABC->Codigo << endl;
+        //cout<<aux->Prioridad<<endl;
         aux = aux->Siguiente;
         contador++;
     }
@@ -99,4 +88,48 @@ if(this->Primero){
 
 
 
+}
+std::string ColaPrioridad::textoGrafica()
+{
+    std::string cuerpo = "";
+    NodoCola *aux = this->Primero;
+    for(int i = 0; i < this->Tamanio; i++)
+    {
+        cuerpo+="nodo";
+        cuerpo+=std::to_string(i);
+        cuerpo+="[label=\"";
+        cuerpo+=aux->Proyecto_ABC->Nombre;
+        cuerpo+="\n";
+        cuerpo+=aux->Prioridad;
+        cuerpo+="\"]; \n";
+        aux = aux->Siguiente;
+    }
+     for(int i = 0; i < (this->Tamanio-1); i++)
+    {
+        cuerpo+="nodo";
+        cuerpo+=std::to_string(i);
+        cuerpo+=" -> nodo";
+        cuerpo+=std::to_string(i+1);
+        cuerpo+="\n";
+    }
+    return cuerpo;
+}
+//std::string NodoCola::textoGraficaProyecto()
+void ColaPrioridad::graficar()
+{
+    ofstream archivo;
+    archivo.open("Cola.dot",ios::out);
+    if(archivo.fail())
+    {
+        cout << "Se produjo un error" << endl;
+    }else{
+        archivo << "digraph migrafica{\n rankdir=LR; \n node[shape=box]" << textoGrafica() << "\n }";
+        archivo.close();
+    }
+
+    try{
+        system("dot -Tpng Cola.dot -o Cola.png");
+    }catch(exception e){
+        cout << "Error al generar imagen";
+    }
 }

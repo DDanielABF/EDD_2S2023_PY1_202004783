@@ -27,6 +27,7 @@ class Matriz
         NodoMatriz *buscarF(int y);
         NodoMatriz *buscarC(int x);
         void Graficar();
+        void GraficarCola();
         /** Nuevos Metodos **/
         void insertar_proyecto(ColaPrioridad *cola);
         void insertar_empleado(ListaCircularDoble *lista);

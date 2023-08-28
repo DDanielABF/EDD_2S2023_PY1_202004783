@@ -6,7 +6,7 @@
 	<string>
 	"Empleado.h"
 
-1692920889 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listacirculardoble.cpp
+1693198149 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listacirculardoble.cpp
 	"ListaCircularDoble.h"
 
 1692758949 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listacirculardoble.h
@@ -14,7 +14,7 @@
 	<string>
 	<iostream>
 
-1692987780 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\main.cpp
+1693199509 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\main.cpp
 	<iostream>
 	<sstream>
 	<fstream>
@@ -35,28 +35,29 @@
 1692841250 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\proyecto.cpp
 	"Proyecto.h"
 
-1692986742 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\colaprioridad.cpp
+1693194992 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\colaprioridad.cpp
 	"ColaPrioridad.h"
+	<fstream>
 
-1692984094 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\colaprioridad.h
+1693191589 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\colaprioridad.h
 	"NodoCola.h"
 	"Proyecto.h"
 	<string>
 	<iostream>
 
-1692921457 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodomatriz.cpp
+1693204562 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodomatriz.cpp
 	"NodoMatriz.h"
 
-1692921333 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodomatriz.h
+1693204549 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodomatriz.h
 	<string>
 	"Proyecto.h"
 	"Empleado.h"
 
-1692990872 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.cpp
+1693205095 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.cpp
 	"Matriz.h"
 	<iostream>
 
-1692921895 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.h
+1693205068 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.h
 	<fstream>
 	<iostream>
 	<string>

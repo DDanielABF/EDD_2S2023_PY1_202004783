@@ -2,61 +2,33 @@ digraph MatrizCapa{
  node[shape=box] 
  rankdir=UD;
 {rank=same; 
-nodo0xef1c50[label="RAIZ\n" ,group=0]; 
-nodo0xef6610[label="PY-102" ,group=1]; 
-nodo0xef6660[label="PY-103" ,group=2]; 
-nodo0xef66b0[label="PY-101" ,group=3]; 
-nodo0xef6700[label="PY-104" ,group=4]; 
-nodo0xef6750[label="PY-100" ,group=5]; 
+nodo0x711c50[label="RAIZ\n" ,group=0]; 
+nodo0x711eb0[label="PY-102" ,group=1]; 
+nodo0x7166f0[label="PY-101" ,group=2]; 
+nodo0x716740[label="PY-100" ,group=3]; 
 } 
 {rank=same; 
-nodo0xef67a0[label="daniel" ,group=0]; 
+nodo0x716790[label="juan" ,group=0]; 
+nodo0x716880[label="PY-100\nSC-001" ,group=3]; 
 } 
 {rank=same; 
-nodo0xef6a60[label="juan" ,group=0]; 
-nodo0xef6b50[label="PY-100\nSC-002" ,group=5]; 
+nodo0x7167e0[label="marielos" ,group=0]; 
+nodo0x7168d0[label="PY-101\nSC-002" ,group=2]; 
 } 
 {rank=same; 
-nodo0xef6ab0[label="marielos" ,group=0]; 
-nodo0xef71e0[label="PY-101\nSC-003" ,group=3]; 
+nodo0x716830[label="alicia" ,group=0]; 
+nodo0x716920[label="PY-102\nSC-003" ,group=1]; 
 } 
-{rank=same; 
-nodo0xef6b00[label="alicia" ,group=0]; 
-nodo0xef6ce0[label="PY-102\nSC-004" ,group=1]; 
-} 
-{rank=same; 
-nodo0xef70a0[label="daniel" ,group=0]; 
-} 
-{rank=same; 
-nodo0xef6bf0[label="juan" ,group=0]; 
-} 
-{rank=same; 
-nodo0xef70f0[label="marielos" ,group=0]; 
-} 
-{rank=same; 
-nodo0xef6ec0[label="alicia" ,group=0]; 
-} 
-{rank=same; 
-nodo0xef6f10[label="charly" ,group=0]; 
-} 
-nodo0xef1c50 -> nodo0xef6610 [dir=both];
-nodo0xef6610 -> nodo0xef6660 [dir=both];
-nodo0xef6660 -> nodo0xef66b0 [dir=both];
-nodo0xef66b0 -> nodo0xef6700 [dir=both];
-nodo0xef6700 -> nodo0xef6750 [dir=both];
-nodo0xef6a60 -> nodo0xef6b50 [dir=both];
-nodo0xef6ab0 -> nodo0xef71e0 [dir=both];
-nodo0xef6b00 -> nodo0xef6ce0 [dir=both];
-nodo0xef1c50 -> nodo0xef67a0 [dir=both];
-nodo0xef67a0 -> nodo0xef6a60 [dir=both];
-nodo0xef6a60 -> nodo0xef6ab0 [dir=both];
-nodo0xef6ab0 -> nodo0xef6b00 [dir=both];
-nodo0xef6b00 -> nodo0xef70a0 [dir=both];
-nodo0xef70a0 -> nodo0xef6bf0 [dir=both];
-nodo0xef6bf0 -> nodo0xef70f0 [dir=both];
-nodo0xef70f0 -> nodo0xef6ec0 [dir=both];
-nodo0xef6ec0 -> nodo0xef6f10 [dir=both];
-nodo0xef6610 -> nodo0xef6ce0 [dir=both];
-nodo0xef66b0 -> nodo0xef71e0 [dir=both];
-nodo0xef6750 -> nodo0xef6b50 [dir=both];
+nodo0x711c50 -> nodo0x711eb0 [dir=both];
+nodo0x711eb0 -> nodo0x7166f0 [dir=both];
+nodo0x7166f0 -> nodo0x716740 [dir=both];
+nodo0x716790 -> nodo0x716880 [dir=both];
+nodo0x7167e0 -> nodo0x7168d0 [dir=both];
+nodo0x716830 -> nodo0x716920 [dir=both];
+nodo0x711c50 -> nodo0x716790 [dir=both];
+nodo0x716790 -> nodo0x7167e0 [dir=both];
+nodo0x7167e0 -> nodo0x716830 [dir=both];
+nodo0x711eb0 -> nodo0x716920 [dir=both];
+nodo0x7166f0 -> nodo0x7168d0 [dir=both];
+nodo0x716740 -> nodo0x716880 [dir=both];
 } 

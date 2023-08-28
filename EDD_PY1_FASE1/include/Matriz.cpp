@@ -263,3 +263,63 @@ void Matriz::Graficar()
     cout << j << endl;
     system(j);
 }
+
+
+void Matriz::GraficarCola(){
+ ofstream archivo;
+    std::string texto = "";
+	std::string nombre_archivo = "ColaP.dot";
+	std::string nombre_imagen = "ColaP.jpg";
+	NodoMatriz *aux1 = this->Raiz;
+	NodoMatriz *aux2 = this->Raiz;
+	int cont =0;
+	int auxcont=0;
+	//NodoMatriz *aux3 = this->Raiz;
+	archivo.open(nombre_archivo, ios::out);
+
+	if ( aux1->Proyecto_ABC != 0 ) {
+		archivo << "digraph ColaPCapa{ \n node[shape=box] \n rankdir=UD;\n";
+
+            archivo << "{rank=same; \n";
+            while( aux1!= 0 ) {
+                if(aux1->Proyecto_ABC)
+                {
+
+                        archivo << "nodo" << aux1 << "[label=\"" << aux1->Proyecto_ABC->Codigo << "\" ,group=" << (aux1->PosX+1) << "]; \n";
+                        cont++;
+                }
+                aux1 = aux1->Siguiente;
+            }
+            archivo << "} \n";
+            aux1= aux2;
+
+            while( aux1 != 0 ) {
+                 if(aux1->Proyecto_ABC && auxcont < cont-1)
+                {
+
+                archivo << "nodo" << aux1 << " -> " << "nodo" << aux1->Siguiente << " [dir=both];\n";
+                auxcont++;
+
+            }
+            aux1 = aux1->Siguiente;
+            }
+
+            archivo << "} \n";
+
+	}
+
+
+	archivo.close();
+    std::string codigo_cmd="dot -Tjpg ";
+    codigo_cmd+=nombre_archivo;
+    codigo_cmd+=" -o ";
+    codigo_cmd+=nombre_imagen;
+    char j[codigo_cmd.size()+1];
+    strcpy(j,codigo_cmd.c_str());
+    cout << j << endl;
+    system(j);
+
+
+
+}
+

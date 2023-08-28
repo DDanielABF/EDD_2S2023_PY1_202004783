@@ -17,6 +17,7 @@ string narchivo="";
 int opcion;
 cout << "1. Carga manual" << endl;
 cout << "2. Crear masiva" << endl;
+cout << "3. Insertar empleados" << endl;
 cin >> opcion;
 switch (opcion) {
     case 1:
@@ -27,7 +28,7 @@ switch (opcion) {
         cin >> password;
         cout<<" datos guardados exitosamente"<<endl;
         listaCircularDoble->Insertar(password,nombre);
-        listaCircularDoble->VerLista();
+        //listaCircularDoble->VerLista();
 
         break;
     case 2:
@@ -71,25 +72,32 @@ Cola->VerProyectos();
 
 }
 void VerListas(ListaCircularDoble *listaCircularDoble,ColaPrioridad *Cola, Matriz *matriz){
-
+std::string nombre;
+std::string proyecto;
 //listaCircularDoble->VerLista();
+cout<<"ingrese el nombre del empleado"<<endl;
+listaCircularDoble->VerLista();
+cin>>nombre;
+cout<<"ingrese codigo del PROYECTO"<<endl;
 Cola->VerProyectos();
- while(Cola->Primero)
+cin>>proyecto;
+Cola->graficar();
+while(Cola->Primero)
     {
         matriz->insertar_proyecto(Cola);
         Cola->Descolar();
-        cout<<"si entra al while"<<endl;
+       // cout<<"si entra al while"<<endl;
         //cout<<Cola.Primero.Siguiente<<endl;
     }
 
     matriz->insertar_empleado(listaCircularDoble);
     //matriz->asignarProyecto("Cristian Suy","PY-106");
-    matriz->asignarProyecto("juan","PY-100");
+    matriz->asignarProyecto(nombre,proyecto);
     matriz->asignarProyecto("marielos","PY-101");
     matriz->asignarProyecto("alicia","PY-102");
 
-
-    matriz->Graficar();
+    cout<<"si asigno"<<endl;
+    matriz->GraficarCola();
 
 
 }
@@ -125,9 +133,11 @@ int main()
         cout << "***************************  Opciones:  ***************************" << endl;
         cout << "1. Cargar empleados" << endl;
         cout << "2. Crear proyecto" << endl;
-        cout << "3. Crear tareas" << endl;
+        cout << "3. Asignar Proyecto" << endl;
         cout << "4. Asignar tareas" << endl;
-        cout << "5. Salir" << endl;
+        cout << "5. Asignar Tareas" << endl;
+        cout << "6. Reportes" << endl;
+        cout << "7. Salir" << endl;
         cout << "Ingrese el número de la opción: ";
         cin >> opcion;
 

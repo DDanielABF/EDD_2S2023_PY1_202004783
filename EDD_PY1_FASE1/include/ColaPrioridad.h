@@ -14,6 +14,7 @@ class ColaPrioridad
         int Tamanio;
         void Ordenar();
         void Encolar(std::string Nombre, std::string Tipo_de_Prioridad);
+        void graficar();
         void Descolar();
         void VerProyectos();
         ColaPrioridad();
@@ -22,6 +23,8 @@ class ColaPrioridad
     protected:
 
     private:
+        std::string textoGrafica();
+        std::string textoGraficaProyecto();
 };
 
 #endif // COLAPRIORIDAD_H
