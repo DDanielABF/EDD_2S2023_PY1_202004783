@@ -11,8 +11,9 @@ ListaCircularDoble *listaDobleCircular = new ListaCircularDoble();
 ColaPrioridad *cola = new ColaPrioridad();
  Matriz *matriz = new Matriz();
 void CargaEmpleado(ListaCircularDoble *listaCircularDoble){
-string nombre="";
-string password="";
+std::string nombre="";
+std::string n="";
+std::string password="";
 string narchivo="";
 int opcion;
 cout << "1. Carga manual" << endl;
@@ -22,11 +23,19 @@ cin >> opcion;
 switch (opcion) {
     case 1:
 
-        cout << "ingrese nombre" << endl;
-        cin >> nombre;
-        cout << "ingrese Contraseña " << endl;
-        cin >> password;
+        std::cout << "Ingrese nombre: ";
+        cin.ignore();
+        std::getline(std::cin, nombre);
+       // cin>>n;
+
+
+        std::cout << "\nIngrese contraseña: ";
+
+        std::getline(std::cin, password);
+        //cin >> password;
         cout<<" datos guardados exitosamente"<<endl;
+
+
         listaCircularDoble->Insertar(password,nombre);
         //listaCircularDoble->VerLista();
 
@@ -46,7 +55,7 @@ switch (opcion) {
             getline(stream, name, delimitador);
             getline(stream, contra, delimitador);
             listaCircularDoble->Insertar(contra,name);
-            listaCircularDoble->VerLista();
+            //listaCircularDoble->VerLista();
 
 
         }
@@ -64,44 +73,99 @@ cout << "Ingrese tipo de prioridad" << endl;
 cin >> prioridad;
 Cola->Encolar(nombrep,prioridad);
 cout<<"sin ordenar"<<endl;
-Cola->VerProyectos();
+//Cola->VerProyectos();
 Cola->Ordenar();
-cout<<"ordenamiento: "<<endl;
-Cola->VerProyectos();
+//cout<<"ordenamiento: "<<endl;
+//Cola->VerProyectos();
 
 
 }
 void VerListas(ListaCircularDoble *listaCircularDoble,ColaPrioridad *Cola, Matriz *matriz){
 std::string nombre;
 std::string proyecto;
+std::string puesto;
+int opcion;
 //listaCircularDoble->VerLista();
-cout<<"ingrese el nombre del empleado"<<endl;
-listaCircularDoble->VerLista();
-cin>>nombre;
-cout<<"ingrese codigo del PROYECTO"<<endl;
-Cola->VerProyectos();
-cin>>proyecto;
-Cola->graficar();
-while(Cola->Primero)
-    {
-        matriz->insertar_proyecto(Cola);
-        Cola->Descolar();
-       // cout<<"si entra al while"<<endl;
-        //cout<<Cola.Primero.Siguiente<<endl;
-    }
+cout<<"1. Primera asignacion"<<endl;
+cout<<"2. asignacion"<<endl;
+cin>>opcion;
 
-    matriz->insertar_empleado(listaCircularDoble);
-    //matriz->asignarProyecto("Cristian Suy","PY-106");
-    matriz->asignarProyecto(nombre,proyecto);
-    matriz->asignarProyecto("marielos","PY-101");
-    matriz->asignarProyecto("alicia","PY-102");
+switch(opcion){
+ case 1:
+    cout<<"ingrese el nombre del empleado"<<endl;
+    listaCircularDoble->VerLista();
+    cin>>nombre;
+    cout<<"ingrese nombre del puesto"<<endl;
+    cout<<"1. FDEV"<<endl;
+    cout<<"2. BDEV"<<endl;
+    cout<<"3. QA"<<endl;
+    cin>>puesto;
+    cout<<"ingrese codigo del proyecto"<<endl;
+    matriz->VerProyectos();
+    while(Cola->Primero)
+        {
+            matriz->insertar_proyecto(Cola);
+            Cola->Descolar();
+        }
+        cin>>proyecto;
+        matriz->insertar_empleado(listaCircularDoble);
+        matriz->asignarProyecto(nombre,proyecto,puesto);
+        cout<<"si asigno"<<endl;
+        break;
 
-    cout<<"si asigno"<<endl;
-    matriz->GraficarCola();
+ case 2:
+    cout<<"ingrese el nombre del empleado"<<endl;
+    listaCircularDoble->VerLista();
+    cin>>nombre;
+    cout<<"ingrese nombre del puesto"<<endl;
+    cout<<"1. FDEV"<<endl;
+    cout<<"2. BDEV"<<endl;
+    cout<<"3. QA"<<endl;
+    cin>>puesto;
+    cout<<"ingrese codigo del proyecto"<<endl;
+    matriz->VerProyectos();
+    while(Cola->Primero)
+        {
+            matriz->insertar_proyecto(Cola);
+            Cola->Descolar();
+        }
+        cin>>proyecto;
+        //matriz->insertar_empleado(listaCircularDoble);
+        matriz->asignarProyecto(nombre,proyecto,puesto);
+        cout<<"si asigno"<<endl;
+        break;
+
 
 
 }
 
+
+
+}
+
+
+void Reportes(Matriz *matriz){
+int opcion;
+cout << "1. Reporte de cola" << endl;
+cout << "2. Reporte de matriz Dispersa" << endl;
+cout << "3. Reporte json" << endl;
+cin >> opcion;
+switch(opcion){
+    case 1:
+        matriz->GraficarCola();
+        cout<<"reporte de cola creado con exito..."<<endl;
+        break;
+    case 2:
+        matriz->Graficar();
+        cout<<"reporte matriz dispersa creado con exito..."<<endl;
+        break;
+    case 3:
+        cout<<"reporte json creado con exito..."<<endl;
+
+
+
+}
+}
 int main()
 {
 
@@ -134,9 +198,9 @@ int main()
         cout << "1. Cargar empleados" << endl;
         cout << "2. Crear proyecto" << endl;
         cout << "3. Asignar Proyecto" << endl;
-        cout << "4. Asignar tareas" << endl;
-        cout << "5. Asignar Tareas" << endl;
-        cout << "6. Reportes" << endl;
+        cout << "4. Reportes" << endl;
+        cout << "5. crear tareas" << endl;
+        cout << "6. Asignar Tareas" << endl;
         cout << "7. Salir" << endl;
         cout << "Ingrese el número de la opción: ";
         cin >> opcion;
@@ -160,10 +224,20 @@ int main()
                 cout << "Creando tareas..." << endl;
                 break;
             case 4:
-                // Lógica para asignar tareas
-                cout << "Asignando tareas..." << endl;
+
+                 cout << "Reportes" << endl;
+                Reportes(matriz);
+                //cout << "Asignando tareas..." << endl;
                 break;
             case 5:
+                // Lógica para asignar tareas
+               cout<<"crear tarea"<<endl;
+                break;
+            case 6:
+                // Lógica para asignar tareas
+               cout<<"asignar  tarea"<<endl;
+                break;
+            case 7:
                 cout << "Saliendo..." << endl;
                 return 0;
             default:

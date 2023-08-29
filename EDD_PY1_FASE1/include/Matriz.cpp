@@ -15,9 +15,11 @@ Matriz::~Matriz()
 }
 NodoMatriz* Matriz::buscarF(int y)
 {
+
     NodoMatriz *aux = this->Raiz;
     while(aux != 0)
     {
+
         if(aux->PosY == y)
         {
             return aux;
@@ -113,7 +115,7 @@ NodoMatriz* Matriz::insertar_fila(NodoMatriz *nuevo, NodoMatriz *cabeza_fila)
     return nuevo;
 }
 
-/** NUEVAS FUNCIONES */
+
 NodoMatriz* Matriz::nueva_columna_1(int x, Proyecto *proyecto)
 {
     NodoMatriz *columna = this->insertar_columna(new NodoMatriz(proyecto, 0, x, -1), this->Raiz);
@@ -150,11 +152,13 @@ void Matriz::insertar_empleado(ListaCircularDoble *lista)
 }
 
 
-void Matriz::asignarProyecto(std::string nombre_empleado, std::string codigo_proyecto)
+void Matriz::asignarProyecto(std::string nombre_empleado, std::string codigo_proyecto, std::string codigo_empleado)
 {
     NodoMatriz *nodo_Columna =  this->buscarC_1(codigo_proyecto);
     NodoMatriz *nodo_Fila = this->buscarF_1(nombre_empleado);
-
+    if(nodo_Fila->Encargado_c->Codigo.length()!=8){
+        nodo_Fila->Encargado_c->Codigo = codigo_empleado +"-"+ nodo_Fila->Encargado_c->Codigo;
+    }
     NodoMatriz *nuevo = new NodoMatriz(nodo_Columna->Proyecto_ABC, nodo_Fila->Encargado_c, nodo_Columna->PosX, nodo_Fila->PosY);
 
     if(nodo_Columna != 0 && nodo_Fila !=0 ){
@@ -193,6 +197,41 @@ NodoMatriz* Matriz::buscarC_1(std::string codigo)
         aux = aux->Siguiente;
     }
     return 0;
+}
+
+void Matriz::VerProyectos(){
+
+NodoMatriz *aux1 = this->Raiz;
+NodoMatriz *aux2 = this->Raiz;
+aux1=aux1->Abajo;
+int contador = 0;
+if ( aux1 != 0 ) {
+
+        while( aux2 != 0 ) {
+            aux1 = aux2;
+
+            while( aux1 != 0 ) {
+                if(aux1->Proyecto_ABC)
+                {
+                    if(aux1->Encargado_c)
+                    {
+                         cout <<to_string(contador+1)<<". "<< aux1->Proyecto_ABC->Codigo << endl;
+                         contador++;
+
+                        }else{
+                        cout <<to_string(contador+1)<<". "<< aux1->Proyecto_ABC->Codigo << endl;
+                        contador++;
+                    }
+                }else if(aux1->Encargado_c)
+                {
+
+                }
+                aux1 = aux1->Siguiente;
+            }
+
+            aux2 = aux2->Abajo;
+        }
+    }
 }
 
 void Matriz::Graficar()

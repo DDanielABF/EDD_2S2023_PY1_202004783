@@ -6,7 +6,7 @@
 	<string>
 	"Empleado.h"
 
-1693198149 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listacirculardoble.cpp
+1693263677 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listacirculardoble.cpp
 	"ListaCircularDoble.h"
 
 1692758949 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listacirculardoble.h
@@ -14,7 +14,7 @@
 	<string>
 	<iostream>
 
-1693199509 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\main.cpp
+1693288308 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\main.cpp
 	<iostream>
 	<sstream>
 	<fstream>
@@ -53,11 +53,11 @@
 	"Proyecto.h"
 	"Empleado.h"
 
-1693205095 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.cpp
+1693287311 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.cpp
 	"Matriz.h"
 	<iostream>
 
-1693205068 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.h
+1693283559 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.h
 	<fstream>
 	<iostream>
 	<string>

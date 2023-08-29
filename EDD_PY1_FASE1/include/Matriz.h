@@ -28,12 +28,12 @@ class Matriz
         NodoMatriz *buscarC(int x);
         void Graficar();
         void GraficarCola();
-        /** Nuevos Metodos **/
+        void VerProyectos();
         void insertar_proyecto(ColaPrioridad *cola);
         void insertar_empleado(ListaCircularDoble *lista);
         NodoMatriz *nueva_columna_1(int x, Proyecto *proyecto);
         NodoMatriz *nueva_fila_1(int y, Empleado *empleado);
-        void asignarProyecto(std::string nombre_empleado, std::string codigo_proyecto);
+        void asignarProyecto(std::string nombre_empleado, std::string codigo_proyecto,std::string codigo_empleado);
         NodoMatriz *buscarF_1(std::string nombre);
         NodoMatriz *buscarC_1(std::string codigo);
         Matriz();
