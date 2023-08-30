@@ -39,7 +39,7 @@ void ColaPrioridad::VerProyectos()
     while(aux)
     {
         cout <<to_string(contador+1)<<". "<< aux->Proyecto_ABC->Codigo << endl;
-        //cout<<aux->Prioridad<<endl;
+
         aux = aux->Siguiente;
         contador++;
     }
@@ -64,8 +64,8 @@ if(this->Primero){
         actual = pivote->Siguiente;
         while(actual)
         {
-            cout<<pivote->Prioridad<<endl;
-            cout<<actual->Prioridad<<endl;
+           // cout<<pivote->Prioridad<<endl;
+            //cout<<actual->Prioridad<<endl;
             if(pivote->Prioridad.compare(actual->Prioridad)==1 ||pivote->Prioridad.compare(actual->Prioridad)==2)
             {
                 Proyecto *tempProyecto = pivote->Proyecto_ABC;

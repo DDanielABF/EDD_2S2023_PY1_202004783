@@ -6,15 +6,16 @@
 	<string>
 	"Empleado.h"
 
-1693263677 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listacirculardoble.cpp
+1693360888 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listacirculardoble.cpp
 	"ListaCircularDoble.h"
 
-1692758949 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listacirculardoble.h
+1693360888 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listacirculardoble.h
 	"NodoListaCircularDoble.h"
 	<string>
 	<iostream>
+	"Empleado.h"
 
-1693288308 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\main.cpp
+1693380091 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\main.cpp
 	<iostream>
 	<sstream>
 	<fstream>
@@ -22,6 +23,8 @@
 	"ListaCircularDoble.h"
 	"ColaPrioridad.h"
 	"Matriz.h"
+	"Empleado.h"
+	"ListaDoble.h"
 
 1692841222 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodocola.cpp
 	"NodoCola.h"
@@ -35,29 +38,30 @@
 1692841250 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\proyecto.cpp
 	"Proyecto.h"
 
-1693194992 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\colaprioridad.cpp
+1693368192 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\colaprioridad.cpp
 	"ColaPrioridad.h"
 	<fstream>
 
-1693191589 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\colaprioridad.h
+1693360544 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\colaprioridad.h
 	"NodoCola.h"
 	"Proyecto.h"
 	<string>
 	<iostream>
 
-1693204562 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodomatriz.cpp
+1693375171 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodomatriz.cpp
 	"NodoMatriz.h"
 
-1693204549 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodomatriz.h
+1693375151 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodomatriz.h
 	<string>
 	"Proyecto.h"
 	"Empleado.h"
+	"ListaDoble.h"
 
-1693287311 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.cpp
+1693380148 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.cpp
 	"Matriz.h"
 	<iostream>
 
-1693283559 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.h
+1693379561 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.h
 	<fstream>
 	<iostream>
 	<string>
@@ -74,4 +78,17 @@
 
 1692919988 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\empleado.cpp
 	"Empleado.h"
+
+1693374569 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listadoble.cpp
+	"ListaDoble.h"
+
+1693374520 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listadoble.h
+	"NodoListaDoble.h"
+	<string>
+
+1693368882 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodolistadoble.h
+	<string>
+
+1693368882 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\nodolistadoble.cpp
+	"NodoListaDoble.h"
 

@@ -3,6 +3,7 @@
 #include <string>
 #include "Proyecto.h"
 #include "Empleado.h"
+#include "ListaDoble.h"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ class NodoMatriz
         int PosX;
         Proyecto *Proyecto_ABC;
         Empleado *Encargado_c;
+        ListaDoble *Tareas;
         NodoMatriz(Proyecto *proyecto, Empleado *encargado, int posy, int posx);
         virtual ~NodoMatriz();
 

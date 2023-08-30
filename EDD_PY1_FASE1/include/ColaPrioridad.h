@@ -17,6 +17,7 @@ class ColaPrioridad
         void graficar();
         void Descolar();
         void VerProyectos();
+
         ColaPrioridad();
         virtual ~ColaPrioridad();
 

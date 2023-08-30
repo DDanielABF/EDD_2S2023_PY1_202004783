@@ -11,6 +11,7 @@ NodoMatriz::NodoMatriz(Proyecto *proyecto, Empleado *encargado, int posx, int po
     this->PosX = posx;
     this->Encargado_c = encargado;
     this->Proyecto_ABC = proyecto;
+    this->Tareas = new ListaDoble();
     //ctor
 }
 

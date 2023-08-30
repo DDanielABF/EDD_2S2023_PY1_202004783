@@ -2,12 +2,14 @@ digraph ColaPCapa{
  node[shape=box] 
  rankdir=UD;
 {rank=same; 
-nodo0x791c50[label="RAIZ" ,group=0]; 
-nodo0x791eb0[label="PY-102" ,group=1]; 
-nodo0x7966f0[label="PY-101" ,group=2]; 
-nodo0x796740[label="PY-100" ,group=3]; 
+nodo0xde1c50[label="RAIZ" ,group=0]; 
+nodo0xde67c0[label="PY-102" ,group=1]; 
+nodo0xde6810[label="PY-103" ,group=2]; 
+nodo0xde6860[label="PY-101" ,group=3]; 
+nodo0xde68b0[label="PY-100" ,group=4]; 
 } 
-nodo0x791c50 -> nodo0x791eb0 [dir=both];
-nodo0x791eb0 -> nodo0x7966f0 [dir=both];
-nodo0x7966f0 -> nodo0x796740 [dir=both];
+nodo0xde1c50 -> nodo0xde67c0 [dir=both];
+nodo0xde67c0 -> nodo0xde6810 [dir=both];
+nodo0xde6810 -> nodo0xde6860 [dir=both];
+nodo0xde6860 -> nodo0xde68b0 [dir=both];
 } 

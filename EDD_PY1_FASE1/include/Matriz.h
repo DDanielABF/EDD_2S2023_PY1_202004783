@@ -29,13 +29,19 @@ class Matriz
         void Graficar();
         void GraficarCola();
         void VerProyectos();
+        void VerEmpleado();
+        void VerTareas(std::string codigo);
         void insertar_proyecto(ColaPrioridad *cola);
-        void insertar_empleado(ListaCircularDoble *lista);
+        void insertar_empleado(ListaCircularDoble *lista,std::string nombre);
+        void insertar_empleado_1(Empleado *empleado);
         NodoMatriz *nueva_columna_1(int x, Proyecto *proyecto);
         NodoMatriz *nueva_fila_1(int y, Empleado *empleado);
         void asignarProyecto(std::string nombre_empleado, std::string codigo_proyecto,std::string codigo_empleado);
         NodoMatriz *buscarF_1(std::string nombre);
+        NodoMatriz *buscarF_2(std::string codigo_empleado);
         NodoMatriz *buscarC_1(std::string codigo);
+        void BuscarProyecto(std::string codigo, std::string nombre_tarea);
+        void BuscarEmpleado(std::string codigo, std::string nombre_tarea, std::string nombre_empleado);
         Matriz();
         virtual ~Matriz();
 

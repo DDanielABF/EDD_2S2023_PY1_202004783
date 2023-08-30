@@ -86,6 +86,10 @@ NodoMatriz* Matriz::insertar_fila(NodoMatriz *nuevo, NodoMatriz *cabeza_fila)
     while(true)
     {
         if(temp->PosY==nuevo->PosY){
+                if(temp->Encargado_c->Nombre.compare(nuevo->Encargado_c->Nombre)==0){
+
+                    break;
+                }
             temp->PosX = nuevo->PosX;
             temp->Encargado_c = nuevo->Encargado_c;
             temp->Proyecto_ABC = nuevo->Proyecto_ABC;
@@ -135,22 +139,30 @@ NodoMatriz* Matriz::nueva_fila_1(int y, Empleado *encargado)
     return fila;
 }
 
-void Matriz::insertar_empleado(ListaCircularDoble *lista)
+void Matriz::insertar_empleado(ListaCircularDoble *lista,std::string nombre)
 {
 
     NodoListaCircularDoble *aux = lista->Primero;
     int contador = 0;
     while(lista->Tamanio > contador)
     {
-
+        if(aux->EmpleadoSistema->Nombre.compare(nombre)==0){
         this->nueva_fila_1(this->CoordenadaY, aux->EmpleadoSistema);
+        }
         aux = aux->Siguiente;
         contador++;
         this->CoordenadaY++;
 
     }
 }
+void Matriz::insertar_empleado_1(Empleado *empleado){
+//aux = this->Raiz;
+int contador;
 
+int coordy = contador +1;
+this->nueva_fila_1(coordy,empleado);
+
+}
 
 void Matriz::asignarProyecto(std::string nombre_empleado, std::string codigo_proyecto, std::string codigo_empleado)
 {
@@ -184,7 +196,19 @@ NodoMatriz* Matriz::buscarF_1(std::string nombre)
     }
     return 0;
 }
+NodoMatriz* Matriz::buscarF_2(std::string codigo_empleado){
+NodoMatriz *aux = this->Raiz;
+    while(aux != 0)
+    {
+        if(aux->Encargado_c->Codigo.compare(codigo_empleado) == 0)
+        {
+            return aux;
+        }
+        aux = aux->Abajo;
+    }
+    return 0;
 
+}
 NodoMatriz* Matriz::buscarC_1(std::string codigo)
 {
     NodoMatriz *aux = this->Raiz;
@@ -201,37 +225,72 @@ NodoMatriz* Matriz::buscarC_1(std::string codigo)
 
 void Matriz::VerProyectos(){
 
-NodoMatriz *aux1 = this->Raiz;
-NodoMatriz *aux2 = this->Raiz;
-aux1=aux1->Abajo;
-int contador = 0;
-if ( aux1 != 0 ) {
+NodoMatriz *aux = this->Raiz;
+int contador=0;
+aux=aux->Siguiente;
+ while(aux != 0)
+    {
+        cout <<to_string(contador+1)<<". "<< aux->Proyecto_ABC->Codigo << endl;
+        contador++;
 
-        while( aux2 != 0 ) {
-            aux1 = aux2;
-
-            while( aux1 != 0 ) {
-                if(aux1->Proyecto_ABC)
-                {
-                    if(aux1->Encargado_c)
-                    {
-                         cout <<to_string(contador+1)<<". "<< aux1->Proyecto_ABC->Codigo << endl;
-                         contador++;
-
-                        }else{
-                        cout <<to_string(contador+1)<<". "<< aux1->Proyecto_ABC->Codigo << endl;
-                        contador++;
-                    }
-                }else if(aux1->Encargado_c)
-                {
-
-                }
-                aux1 = aux1->Siguiente;
-            }
-
-            aux2 = aux2->Abajo;
-        }
+        aux = aux->Siguiente;
     }
+}
+void Matriz::BuscarProyecto(std::string codigo, std::string nombre_tarea)
+{
+    NodoMatriz *nodo_Columna =  this->buscarC_1(codigo);
+    nodo_Columna->Tareas->insertar(codigo, nombre_tarea, "");
+}
+
+void Matriz::BuscarEmpleado(std::string codigo, std::string nombre_tarea, std::string nombre_empleado)
+{
+    NodoMatriz *nodo_Columna =  this->buscarC_1(codigo);
+    NodoMatriz *nodo_Fila = this->buscarF_2(nombre_empleado);
+    if(nodo_Fila != 0)
+    {
+        nodo_Columna->Tareas->Asignar(nodo_Columna->Proyecto_ABC->Codigo, nombre_tarea, nodo_Fila->Encargado_c->Codigo);
+    }
+    else
+    {
+        cout << "No hay empleado con ese nombre" << endl;
+    }
+}
+
+void Matriz::VerTareas(std::string codigo){
+
+NodoMatriz *aux = this->Raiz;
+int contador=0;
+aux=aux->Siguiente;
+ while(aux != 0)
+    {
+        if(aux->Proyecto_ABC->Codigo.compare(codigo)==0){
+            while(aux->Tareas->Primero){
+                cout <<to_string(contador+1)<<". "<< aux->Tareas->Primero->Nombre_Tarea << endl;
+                contador++;
+                aux->Tareas->Primero= aux->Tareas->Primero->Siguiente;
+        }
+
+        }
+        //aux->Tareas->Primero= aux->Tareas->Primero->Siguiente;
+        aux = aux->Siguiente;
+    }
+
+}
+
+void Matriz::VerEmpleado(){
+    NodoMatriz *aux = this->Raiz;
+int contador=0;
+aux=aux->Abajo;
+ while(aux != 0)
+    {
+        cout <<to_string(contador+1)<<". "<< aux->Encargado_c->Codigo <<endl;
+        cout << aux->Encargado_c->Nombre <<endl;
+        contador++;
+
+        aux = aux->Abajo;
+    }
+
+
 }
 
 void Matriz::Graficar()

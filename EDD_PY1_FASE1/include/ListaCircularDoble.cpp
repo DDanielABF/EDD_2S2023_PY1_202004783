@@ -60,4 +60,24 @@ void ListaCircularDoble::Insertar(std::string password, std::string nombre)
     }
 }
 
+ Empleado* ListaCircularDoble::BuscarEmpleado(std::string nombre){
 
+     NodoListaCircularDoble *aux = this->Primero;
+    int contador = 0;
+    while(this->Tamanio > contador)
+    {
+       if(aux->EmpleadoSistema->Nombre.compare(nombre)==0){
+
+        return aux->EmpleadoSistema;
+
+       }
+
+
+
+
+
+        aux = aux->Siguiente;
+        contador++;
+    }
+
+}
