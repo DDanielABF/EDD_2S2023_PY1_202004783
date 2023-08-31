@@ -2,38 +2,35 @@ digraph MatrizCapa{
  node[shape=box] 
  rankdir=UD;
 {rank=same; 
-nodo0xf81c50[label="RAIZ\n" ,group=0]; 
-nodo0xf867f0[label="PY-102" ,group=1]; 
-nodo0xf86860[label="PY-103" ,group=2]; 
-nodo0xf868d0[label="PY-101" ,group=3]; 
-nodo0xf86940[label="PY-100" ,group=4]; 
+nodo0x7d1c50[label="RAIZ\n" ,group=0]; 
+nodo0x7d67f0[label="PY-102" ,group=1]; 
+nodo0x7d6860[label="PY-103" ,group=2]; 
+nodo0x7d68d0[label="PY-101" ,group=3]; 
+nodo0x7d6940[label="PY-100" ,group=4]; 
 } 
 {rank=same; 
-nodo0xf869b0[label="juan" ,group=0]; 
-nodo0xf87420[label="PY-103\nFDEV-001" ,group=2]; 
-nodo0xf86a20[label="PY-100\nFDEV-001" ,group=4]; 
+nodo0x7d69b0[label="juan" ,group=0]; 
+nodo0x7d6a20[label="PY-100\nFDEV-001" ,group=4]; 
 } 
 {rank=same; 
-nodo0xf86a90[label="marielos" ,group=0]; 
-nodo0xf86b00[label="PY-102\nBDEV-002" ,group=1]; 
+nodo0x7d6a90[label="marielos" ,group=0]; 
+nodo0x7d6b00[label="PY-102\nBDEV-002" ,group=1]; 
 } 
 {rank=same; 
-nodo0xf86b70[label="alicia" ,group=0]; 
-nodo0xf873d0[label="PY-101\nQA-003" ,group=3]; 
+nodo0x7d6b70[label="alicia" ,group=0]; 
+nodo0x7d73d0[label="PY-101\nQA-003" ,group=3]; 
 } 
-nodo0xf81c50 -> nodo0xf867f0 [dir=both];
-nodo0xf867f0 -> nodo0xf86860 [dir=both];
-nodo0xf86860 -> nodo0xf868d0 [dir=both];
-nodo0xf868d0 -> nodo0xf86940 [dir=both];
-nodo0xf869b0 -> nodo0xf87420 [dir=both];
-nodo0xf87420 -> nodo0xf86a20 [dir=both];
-nodo0xf86a90 -> nodo0xf86b00 [dir=both];
-nodo0xf86b70 -> nodo0xf873d0 [dir=both];
-nodo0xf81c50 -> nodo0xf869b0 [dir=both];
-nodo0xf869b0 -> nodo0xf86a90 [dir=both];
-nodo0xf86a90 -> nodo0xf86b70 [dir=both];
-nodo0xf867f0 -> nodo0xf86b00 [dir=both];
-nodo0xf86860 -> nodo0xf87420 [dir=both];
-nodo0xf868d0 -> nodo0xf873d0 [dir=both];
-nodo0xf86940 -> nodo0xf86a20 [dir=both];
+nodo0x7d1c50 -> nodo0x7d67f0 [dir=both];
+nodo0x7d67f0 -> nodo0x7d6860 [dir=both];
+nodo0x7d6860 -> nodo0x7d68d0 [dir=both];
+nodo0x7d68d0 -> nodo0x7d6940 [dir=both];
+nodo0x7d69b0 -> nodo0x7d6a20 [dir=both];
+nodo0x7d6a90 -> nodo0x7d6b00 [dir=both];
+nodo0x7d6b70 -> nodo0x7d73d0 [dir=both];
+nodo0x7d1c50 -> nodo0x7d69b0 [dir=both];
+nodo0x7d69b0 -> nodo0x7d6a90 [dir=both];
+nodo0x7d6a90 -> nodo0x7d6b70 [dir=both];
+nodo0x7d67f0 -> nodo0x7d6b00 [dir=both];
+nodo0x7d68d0 -> nodo0x7d73d0 [dir=both];
+nodo0x7d6940 -> nodo0x7d6a20 [dir=both];
 } 

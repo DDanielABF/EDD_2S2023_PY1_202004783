@@ -249,6 +249,7 @@ void Matriz::BuscarEmpleado(std::string codigo, std::string nombre_tarea, std::s
     if(nodo_Fila != 0)
     {
         nodo_Columna->Tareas->Asignar(nodo_Columna->Proyecto_ABC->Codigo, nombre_tarea, nodo_Fila->Encargado_c->Codigo);
+        //cout<<nodo_Fila->Encargado_c->Codigo<<endl;
     }
     else
     {
@@ -416,8 +417,55 @@ void Matriz::GraficarCola(){
     strcpy(j,codigo_cmd.c_str());
     cout << j << endl;
     system(j);
-
+    archivo << "{\n";
 
 
 }
 
+void Matriz::ReporteJson(){
+ofstream archivo;
+    std::string texto = "";
+	std::string nombre_archivo = "Reporte.json";
+	//std::string nombre_imagen = "ColaP.jpg";
+	NodoMatriz *aux1 = this->Raiz;
+	//NodoMatriz *aux2 = this->Raiz;
+	//int cont =0;
+	//int auxcont=0;
+    archivo.open(nombre_archivo, ios::out);
+    aux1=aux1->Siguiente;
+    if ( aux1 != 0 ){
+        archivo<<"{\n"<<" \"proyectos\":[\n";
+
+        while( aux1!= 0 ) {
+                if(aux1->Proyecto_ABC)
+                {
+                archivo<<"{\n"<<"\"id\": "<<"\""<<aux1->Proyecto_ABC->Codigo<<"\",\n";
+
+                archivo<<"\"nombre\": "<<"\""<<aux1->Proyecto_ABC->Nombre<<"\",\n";
+                archivo<<"\"tareas\":[\n";
+
+                 while(aux1->Tareas->Primero){
+                        archivo<<"{\n"<<"\"nombre\":\""<<aux1->Tareas->Primero->Nombre_Tarea<<"\",\n";
+                        archivo<<"\"empleado\": \""<<aux1->Tareas->Primero->Codigo_Encargado<<"\"\n},";
+
+
+                aux1->Tareas->Primero= aux1->Tareas->Primero->Siguiente;
+                }
+
+                archivo<<"]";
+
+                } aux1=aux1->Siguiente;
+
+
+                }
+
+
+
+
+        archivo<<"]\n"<<"}";
+
+    }
+    archivo.close();
+    cout<<"se creo reporte json con exito!"<<endl;
+
+}

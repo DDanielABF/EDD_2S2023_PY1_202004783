@@ -15,7 +15,7 @@
 	<iostream>
 	"Empleado.h"
 
-1693380091 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\main.cpp
+1693453814 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\main.cpp
 	<iostream>
 	<sstream>
 	<fstream>
@@ -57,11 +57,11 @@
 	"Empleado.h"
 	"ListaDoble.h"
 
-1693380148 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.cpp
+1693453555 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.cpp
 	"Matriz.h"
 	<iostream>
 
-1693379561 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.h
+1693444433 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\matriz.h
 	<fstream>
 	<iostream>
 	<string>
@@ -79,8 +79,9 @@
 1692919988 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\empleado.cpp
 	"Empleado.h"
 
-1693374569 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listadoble.cpp
+1693454225 source:c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listadoble.cpp
 	"ListaDoble.h"
+	<iostream>
 
 1693374520 c:\users\danie\onedrive\escritorio\edd lab\clase 2\clase extra\edd_py1_fase1\include\listadoble.h
 	"NodoListaDoble.h"

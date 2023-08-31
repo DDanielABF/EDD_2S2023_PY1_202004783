@@ -28,6 +28,7 @@ class Matriz
         NodoMatriz *buscarC(int x);
         void Graficar();
         void GraficarCola();
+        void ReporteJson();
         void VerProyectos();
         void VerEmpleado();
         void VerTareas(std::string codigo);

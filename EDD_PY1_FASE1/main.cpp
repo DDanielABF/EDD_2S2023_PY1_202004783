@@ -225,6 +225,7 @@ switch(opcion){
         cout<<"reporte matriz dispersa creado con exito..."<<endl;
         break;
     case 3:
+        matriz->ReporteJson();
         cout<<"reporte json creado con exito..."<<endl;
 
 
@@ -233,7 +234,7 @@ switch(opcion){
 }
 int main()
 {
-
+system("pause");
 
  string usuario="";
  string password="";

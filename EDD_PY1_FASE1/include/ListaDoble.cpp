@@ -1,4 +1,5 @@
 #include "ListaDoble.h"
+#include <iostream>
 
 ListaDoble::ListaDoble()
 {
@@ -23,6 +24,7 @@ if(this->Primero==0){
 
         aux=aux->Siguiente;
     }
+
     nuevo->Anterior =aux;
     aux->Siguiente = nuevo;
     this->Tamanio++;
@@ -32,6 +34,7 @@ if(this->Primero==0){
 }
 
 void ListaDoble::Asignar(std::string codigo, std::string nombre_tarea,std::string codigo_encargado){
+
     if(this->Primero){
 
         NodoListaDoble *aux= this->Primero;
@@ -39,6 +42,7 @@ void ListaDoble::Asignar(std::string codigo, std::string nombre_tarea,std::strin
             if (aux->Codigo.compare(codigo)==0 && aux->Nombre_Tarea.compare(nombre_tarea)==0){
 
                 aux->Codigo_Encargado = codigo_encargado;
+                this->insertar(aux->Codigo, aux->Nombre_Tarea,aux->Codigo_Encargado);
                 break;
 
 
@@ -58,3 +62,9 @@ void ListaDoble::Asignar(std::string codigo, std::string nombre_tarea,std::strin
 
 
 }
+
+
+
+
+
+
